@@ -1,0 +1,15 @@
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.UseCases/bin/Debug/net10.0/Morent.UseCases.deps.json
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.UseCases/bin/Debug/net10.0/Morent.UseCases.dll
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.UseCases/bin/Debug/net10.0/Morent.UseCases.pdb
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.UseCases/bin/Debug/net10.0/Morent.Core.dll
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.UseCases/bin/Debug/net10.0/Morent.Core.pdb
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.UseCases/obj/Debug/net10.0/Morent.UseCases.csproj.AssemblyReference.cache
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.UseCases/obj/Debug/net10.0/Morent.UseCases.GeneratedMSBuildEditorConfig.editorconfig
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.UseCases/obj/Debug/net10.0/Morent.UseCases.AssemblyInfoInputs.cache
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.UseCases/obj/Debug/net10.0/Morent.UseCases.AssemblyInfo.cs
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.UseCases/obj/Debug/net10.0/Morent.UseCases.csproj.CoreCompileInputs.cache
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.UseCases/obj/Debug/net10.0/Morent.U.B3219782.Up2Date
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.UseCases/obj/Debug/net10.0/Morent.UseCases.dll
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.UseCases/obj/Debug/net10.0/refint/Morent.UseCases.dll
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.UseCases/obj/Debug/net10.0/Morent.UseCases.pdb
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.UseCases/obj/Debug/net10.0/ref/Morent.UseCases.dll

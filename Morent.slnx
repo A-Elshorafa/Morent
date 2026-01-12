@@ -1,0 +1,33 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".template.config/template.json" />
+    <File Path="CleanArchitecture.nuspec" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Morent.Core/Morent.Core.csproj" />
+    <Project Path="src/Morent.Infrastructure/Morent.Infrastructure.csproj" />
+    <Project Path="src/Morent.UseCases/Morent.UseCases.csproj" />
+    <Project Path="src/Morent.Web/Morent.Web.csproj" />
+  </Folder>
+  <Folder Name="/src/_aspire/">
+    <Project Path="src/Morent.AspireHost/Morent.AspireHost.csproj" />
+    <Project Path="src/Morent.ServiceDefaults/Morent.ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Morent.FunctionalTests/Morent.FunctionalTests.csproj">
+      <BuildDependency Project="src/Morent.Web/Morent.Web.csproj" />
+    </Project>
+    <Project Path="tests/Morent.IntegrationTests/Morent.IntegrationTests.csproj">
+      <BuildDependency Project="src/Morent.Infrastructure/Morent.Infrastructure.csproj" />
+    </Project>
+    <Project Path="tests/Morent.UnitTests/Morent.UnitTests.csproj" />
+  </Folder>
+</Solution>

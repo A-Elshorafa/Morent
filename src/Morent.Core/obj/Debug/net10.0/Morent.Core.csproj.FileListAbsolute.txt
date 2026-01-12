@@ -1,0 +1,12 @@
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Core/bin/Debug/net10.0/Morent.Core.deps.json
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Core/bin/Debug/net10.0/Morent.Core.dll
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Core/bin/Debug/net10.0/Morent.Core.pdb
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Core/obj/Debug/net10.0/Morent.Core.csproj.AssemblyReference.cache
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Core/obj/Debug/net10.0/Morent.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Core/obj/Debug/net10.0/Morent.Core.AssemblyInfoInputs.cache
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Core/obj/Debug/net10.0/Morent.Core.AssemblyInfo.cs
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Core/obj/Debug/net10.0/Morent.Core.csproj.CoreCompileInputs.cache
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Core/obj/Debug/net10.0/Morent.Core.dll
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Core/obj/Debug/net10.0/refint/Morent.Core.dll
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Core/obj/Debug/net10.0/Morent.Core.pdb
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Core/obj/Debug/net10.0/ref/Morent.Core.dll
