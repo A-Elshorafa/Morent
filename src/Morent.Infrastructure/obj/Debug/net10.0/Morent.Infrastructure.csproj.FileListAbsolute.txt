@@ -11,10 +11,10 @@
 /Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Infrastructure/obj/Debug/net10.0/Morent.Infrastructure.AssemblyInfoInputs.cache
 /Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Infrastructure/obj/Debug/net10.0/Morent.Infrastructure.AssemblyInfo.cs
 /Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Infrastructure/obj/Debug/net10.0/Morent.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Infrastructure/obj/Debug/net10.0/Morent.Infrastructure.sourcelink.json
 /Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Infrastructure/obj/Debug/net10.0/Morent.I.12A503BD.Up2Date
 /Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Infrastructure/obj/Debug/net10.0/Morent.Infrastructure.dll
 /Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Infrastructure/obj/Debug/net10.0/refint/Morent.Infrastructure.dll
 /Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Infrastructure/obj/Debug/net10.0/Morent.Infrastructure.pdb
 /Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Infrastructure/obj/Debug/net10.0/Morent.Infrastructure.genruntimeconfig.cache
 /Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Infrastructure/obj/Debug/net10.0/ref/Morent.Infrastructure.dll
-/Users/abdelrahmanelshorafa/Documents/work/Morent/src/Morent.Infrastructure/obj/Debug/net10.0/Morent.Infrastructure.sourcelink.json
