@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Morent.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b365ca520f2e15fc2de7080ed36a410ffe28087f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Morent.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Morent.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

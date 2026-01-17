@@ -1,8 +1,11 @@
-﻿using Morent.Web.Configurations;
+﻿using FastEndpoints;
+using MediatR;
+using Morent.UseCases.Features.Cars.GetRecommendedCars;
+using Morent.Web.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.AddLoggerConfigs();  // This adds Serilog for console formatting
+builder.AddLoggerConfigs();
 
 using var loggerFactory = LoggerFactory.Create(config => config.AddConsole());
 var startupLogger = loggerFactory.CreateLogger<Program>();
@@ -12,17 +15,30 @@ startupLogger.LogInformation("Starting web host");
 builder.Services.AddOptionConfigs(builder.Configuration, startupLogger, builder);
 builder.Services.AddServiceConfigs(startupLogger, builder);
 
-builder.Services.AddFastEndpoints()
-                .SwaggerDocument(o =>
-                {
-                  o.ShortSchemaNames = true;
-                });
+// ✅ Register MediatR (this is what you chose)
+builder.Services.AddMediatR(cfg =>
+{
+  cfg.RegisterServicesFromAssembly(typeof(GetRecommendedCarsQuery).Assembly);
+});
+
+// ✅ Register FastEndpoints and scan both Web + UseCases
+builder.Services.AddFastEndpoints(o =>
+  {
+    o.Assemblies = new[]
+    {
+      typeof(Program).Assembly,
+      typeof(GetRecommendedCarsQuery).Assembly
+    };
+  })
+  .SwaggerDocument();
 
 var app = builder.Build();
+
+app.UseFastEndpoints();
+app.UseSwaggerGen();
 
 await app.UseAppMiddlewareAndSeedDatabase();
 
 app.Run();
 
-// Make the implicit Program.cs class public, so integration tests can reference the correct assembly for host building
 public partial class Program { }

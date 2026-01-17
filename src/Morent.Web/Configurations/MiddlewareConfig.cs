@@ -19,7 +19,7 @@ public static class MiddlewareConfig
       app.UseHsts();
     }
 
-    app.UseFastEndpoints();
+    /* app.UseFastEndpoints();
 
     if (app.Environment.IsDevelopment())
     {
@@ -29,6 +29,7 @@ public static class MiddlewareConfig
       });
       app.MapScalarApiReference();
     }
+    */
 
     app.UseHttpsRedirection(); // Note this will drop Authorization headers
 

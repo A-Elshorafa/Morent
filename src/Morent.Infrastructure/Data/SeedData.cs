@@ -1,11 +1,16 @@
-﻿namespace Morent.Infrastructure.Data;
+﻿using Morent.Core.Entities;
+
+namespace Morent.Infrastructure.Data;
 
 public static class SeedData
 {
-  public const int NUMBER_OF_CONTRIBUTORS = 27; // including the 2 below
-
   public static async Task InitializeAsync(AppDbContext dbContext)
   {
-    //if (await dbContext.Contributors.AnyAsync()) return; // DB has been seeded
+    await PopulateTestDataAsync(dbContext);
+  }
+
+  public static async Task PopulateTestDataAsync(AppDbContext dbContext)
+  {
+    await dbContext.SaveChangesAsync();
   }
 }
