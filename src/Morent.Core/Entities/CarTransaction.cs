@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using Morent.Core.Common;
 
 namespace Morent.Core.Entities;
-public class CarTransaction : FullAuditedEntity 
+public class CarTransaction : FullAuditedEntity, IAggregateRoot
 {
   [Key]
     public int CarTransactionId { get; set; }
