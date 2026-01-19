@@ -1,7 +1,7 @@
-﻿using FastEndpoints;
-using MediatR;
+﻿using Microsoft.AspNetCore.Diagnostics;
 using Morent.UseCases.Features.Cars.GetRecommendedCars;
 using Morent.Web.Configurations;
+using Morent.Web.Handlers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +12,14 @@ var startupLogger = loggerFactory.CreateLogger<Program>();
 
 startupLogger.LogInformation("Starting web host");
 
+builder.Services.AddProblemDetails(configure =>
+{
+  configure.CustomizeProblemDetails = context =>
+  {
+    context.ProblemDetails.Extensions.TryAdd("requestId", context.HttpContext.TraceIdentifier);
+  };
+});
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddOptionConfigs(builder.Configuration, startupLogger, builder);
 builder.Services.AddServiceConfigs(startupLogger, builder);
 
@@ -22,22 +30,17 @@ builder.Services.AddMediatR(cfg =>
 });
 
 // ✅ Register FastEndpoints and scan both Web + UseCases
-builder.Services.AddFastEndpoints(o =>
-  {
-    o.Assemblies = new[]
-    {
-      typeof(Program).Assembly,
-      typeof(GetRecommendedCarsQuery).Assembly
-    };
-  })
+builder.Services.AddFastEndpoints()
   .SwaggerDocument();
 
 var app = builder.Build();
 
+await app.UseAppMiddlewareAndSeedDatabase();
+app.UseExceptionHandler();
+
 app.UseFastEndpoints();
 app.UseSwaggerGen();
 
-await app.UseAppMiddlewareAndSeedDatabase();
 
 app.Run();
 
