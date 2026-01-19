@@ -1,4 +1,6 @@
-﻿namespace Morent.UseCases.DTOs;
+﻿using Morent.Core.Entities;
+
+namespace Morent.UseCases.DTOs;
 
 public class CreateCarDto
 {
@@ -28,11 +30,11 @@ public class UpdateCarDto : CreateCarDto
 
 public class CarInfoCardDto
 {
-  public required string ModelName { get; set; }
+  public string ModelName { get; set; }
   public decimal RentalPrice { get; set; }
-  public required string TypeName { get; set; }
-  public required bool IsPreferred { get; set; }
-  public required string PhotoURL { get; set; }
+  public string TypeName { get; set; }
+  public bool IsPreferred { get; set; }
+  public string PhotoURL { get; set; }
   public int FuelCapacity { get; set; }
   public bool IsAutomatic { get; set; }
   public int NoOfPassengers { get; set; }
@@ -48,5 +50,17 @@ public class CarInfoCardDto
     TypeName = typeName;
     IsPreferred = isPreffered;
     PhotoURL = photoURL;
+  }
+  
+  public CarInfoCardDto(Car carData, bool isPreferred, string typeName)
+  {
+    ModelName = carData.ModelName;
+    FuelCapacity = carData.FuelCapacity;
+    NoOfPassengers = carData.NoOfPassengers;
+    IsAutomatic = carData.IsAutomatic;
+    RentalPrice = carData.RentalPrice;
+    PhotoURL = carData.PhotoUrl;
+    IsPreferred = isPreferred;
+    TypeName = typeName;
   }
 }

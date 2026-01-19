@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Morent.Core.Common;
 namespace Morent.Core.Entities;
-public class UserPreference : FullAuditedEntity
+public class UserPreference : FullAuditedEntity, IAggregateRoot
 {
   [Key]
     public int UserPreferencesId { get; set; }
