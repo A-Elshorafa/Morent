@@ -6,6 +6,6 @@ public class CarGroup : Group
 {
   public CarGroup()
   {
-    Configure("car", g => g.AllowAnonymous());
+    Configure("cars", g => g.AllowAnonymous());
   }
 }

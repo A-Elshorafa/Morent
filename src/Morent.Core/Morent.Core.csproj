@@ -12,6 +12,7 @@
     <PackageReference Include="Ardalis.Specification" />
     <PackageReference Include="Mediator.Abstractions" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+    <PackageReference Include="Newtonsoft.Json" />
     <PackageReference Include="Vogen" />
   </ItemGroup>
 
