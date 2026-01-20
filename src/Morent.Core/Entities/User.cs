@@ -16,6 +16,8 @@ public class User : FullAuditedEntity, IAggregateRoot
     public string DrivingLicenseNumber { get; set; } = null!;
     public string JobRole { get; set; } = null!;
     public string PhotoUrl { get; set; } = null!;
+    public string PasswordHash { get; set; } = null!;
     
     public ICollection<UserPreference> Preferences { get; private set; } = new List<UserPreference>();
+    //public bool EmailVerified { get; set; }
 }

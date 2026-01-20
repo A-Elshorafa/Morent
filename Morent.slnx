@@ -17,17 +17,4 @@
     <Project Path="src/Morent.UseCases/Morent.UseCases.csproj" />
     <Project Path="src/Morent.Web/Morent.Web.csproj" />
   </Folder>
-  <Folder Name="/src/_aspire/">
-    <Project Path="src/Morent.AspireHost/Morent.AspireHost.csproj" />
-    <Project Path="src/Morent.ServiceDefaults/Morent.ServiceDefaults.csproj" />
-  </Folder>
-  <Folder Name="/tests/">
-    <Project Path="tests/Morent.FunctionalTests/Morent.FunctionalTests.csproj">
-      <BuildDependency Project="src/Morent.Web/Morent.Web.csproj" />
-    </Project>
-    <Project Path="tests/Morent.IntegrationTests/Morent.IntegrationTests.csproj">
-      <BuildDependency Project="src/Morent.Infrastructure/Morent.Infrastructure.csproj" />
-    </Project>
-    <Project Path="tests/Morent.UnitTests/Morent.UnitTests.csproj" />
-  </Folder>
 </Solution>
