@@ -36,4 +36,9 @@
     <!-- <ProjectReference Include="..\Morent.ServiceDefaults\Morent.ServiceDefaults.csproj" /> -->
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Features\Cars\Recommended.GetRecommendedCarsRequest.cs" />
+    <Compile Remove="Features\Cars\Recommended.GetRecommendedCars.cs" />
+  </ItemGroup>
+
 </Project>
