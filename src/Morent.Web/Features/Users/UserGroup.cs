@@ -6,6 +6,6 @@ public class UserGroup : Group
 {
   public UserGroup()
   {
-    Configure("users", g => g.AllowAnonymous());
+    Configure("users", g => {});
   }
 }

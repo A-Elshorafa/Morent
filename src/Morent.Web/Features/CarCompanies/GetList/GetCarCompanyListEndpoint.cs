@@ -18,7 +18,6 @@ public class GetCarCompanyListEndpoint
   public override void Configure()
   {
     Get(GetCarCompanyListRequest.Route);
-    AllowAnonymous();
     Group<CarCompaniesGroup>();
   }
 
@@ -26,8 +25,8 @@ public class GetCarCompanyListEndpoint
   {
     var result = await _mediator.Send(new GetCarCompanyListQuery(), ct);
 
-    Response.Success = true;
-    Response.Message = "Success";
+    Response.Success = result.IsSuccess;
+    Response.Message = result.IsSuccess? "Success" : "Error";
     Response.Data = result.Value;
 
     return Response;

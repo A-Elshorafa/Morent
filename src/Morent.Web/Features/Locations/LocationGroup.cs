@@ -6,6 +6,6 @@ public class LocationGroup : Group
 {
   public LocationGroup()
   {
-    Configure("locations", g => g.AllowAnonymous());
+    Configure("locations", g => { });
   }
 }

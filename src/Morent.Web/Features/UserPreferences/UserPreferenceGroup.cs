@@ -6,6 +6,6 @@ public class UserPreferenceGroup : Group
 {
   public UserPreferenceGroup()
   {
-    Configure("user-preferences", g => g.AllowAnonymous());
+    Configure("user-preferences", g => { });
   }
 }

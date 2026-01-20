@@ -17,7 +17,6 @@ public class GetCarByIdEndpoint : Endpoint<GetCarByIdRequest, ApiResponse<CarInf
   public override void Configure()
   {
     Get(GetCarByIdRequest.Route);
-    AllowAnonymous();
     Group<CarGroup>();
   }
 

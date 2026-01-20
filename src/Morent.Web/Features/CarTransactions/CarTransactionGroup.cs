@@ -6,6 +6,6 @@ public class CarTransactionGroup : Group
 {
   public CarTransactionGroup()
   {
-    Configure("car-transactions", g => g.AllowAnonymous());
+    Configure("car-transactions", g => {});
   }
 }

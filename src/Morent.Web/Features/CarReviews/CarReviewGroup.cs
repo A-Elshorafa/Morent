@@ -6,6 +6,6 @@ public class CarReviewGroup : Group
 {
   public CarReviewGroup()
   {
-    Configure("car-reviews", g => g.AllowAnonymous());
+    Configure("car-reviews", g => { });
   }
 }

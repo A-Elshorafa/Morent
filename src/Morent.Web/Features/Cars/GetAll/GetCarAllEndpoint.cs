@@ -5,7 +5,7 @@ using IMediator = MediatR.IMediator;
 
 namespace Morent.Web.Features.Car.GetAll;
 
-public class GetCarAllEndpoint : EndpointWithoutRequest<ApiResponse<List<CarInfoCardDto>>>
+public class GetCarAllEndpoint : Endpoint<GetCarAllRequest, ApiResponse<List<CarInfoCardDto>>>
 {
   private readonly IMediator _mediator;
 
@@ -16,18 +16,19 @@ public class GetCarAllEndpoint : EndpointWithoutRequest<ApiResponse<List<CarInfo
 
   public override void Configure()
   {
-    Get("");
-    AllowAnonymous();
+    Get(GetCarAllRequest.Route);
     Group<CarGroup>();
   }
 
-  public override async Task<ApiResponse<List<CarInfoCardDto>>> HandleAsync(CancellationToken ct)
+  public override async Task<ApiResponse<List<CarInfoCardDto>>> HandleAsync(
+    GetCarAllRequest request,
+    CancellationToken ct)
   {
     var result = await _mediator.Send(new GetCarAllQuery(), ct);
 
-    Response.Success = result.IsSuccess;
-    Response.Message = "List fetched";
     Response.Data = result.Value;
+    Response.Success = result.IsSuccess;
+    Response.Message = result.IsSuccess? "Success" : "Failed";
 
     return Response;
   }

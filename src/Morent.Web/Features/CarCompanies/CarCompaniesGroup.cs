@@ -4,6 +4,6 @@ public class CarCompaniesGroup : Group
 {
   public CarCompaniesGroup()
   {
-    Configure("car-companies",ep => ep.AllowAnonymous());
+    Configure("car-companies",ep => {});
   }
 }

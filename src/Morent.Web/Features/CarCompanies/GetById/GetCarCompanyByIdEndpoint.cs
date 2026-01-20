@@ -18,7 +18,6 @@ public class GetCarCompanyByIdEndpoint
   public override void Configure()
   {
     Get(GetCarCompanyByIdRequest.Route);
-    AllowAnonymous();
     Group<CarCompaniesGroup>();
   }
 
