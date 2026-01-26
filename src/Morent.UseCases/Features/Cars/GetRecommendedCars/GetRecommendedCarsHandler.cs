@@ -23,6 +23,7 @@ public sealed class GetRecommendedCarsHandler
     var cars = await _carRepository.ListAsync(spec, cancellationToken);
 
     var carsList = cars.Select(c => new CarInfoCardDto(
+      c.CarId,
       c.ModelName,
       c.FuelCapacity,
       c.NoOfPassengers,
@@ -35,8 +36,7 @@ public sealed class GetRecommendedCarsHandler
     {
       ModelName = c.ModelName,
       TypeName = c.CarType.TypeName,
-      IsPreferred = false,
-      PhotoURL = string.Empty
+      IsPreferred = false
     }).ToList();
 
     return Result<IReadOnlyList<CarInfoCardDto>>.Success(carsList);

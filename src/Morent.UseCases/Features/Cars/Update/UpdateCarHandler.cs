@@ -61,6 +61,7 @@ public class UpdateCarHandler : MediatR.IRequestHandler<UpdateCarCommand, Result
     await _repo.UpdateAsync(entity, ct);
 
     return Result.Success(new CarInfoCardDto(
+      entity.CarId,
       entity.ModelName,
       entity.FuelCapacity,
       entity.NoOfPassengers,
@@ -74,7 +75,6 @@ public class UpdateCarHandler : MediatR.IRequestHandler<UpdateCarCommand, Result
       ModelName = entity.ModelName,
       TypeName = entity.CarType.TypeName,
       IsPreferred = false,
-      PhotoURL = string.Empty
     });
   }
 }

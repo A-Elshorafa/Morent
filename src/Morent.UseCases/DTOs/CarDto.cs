@@ -30,6 +30,7 @@ public class UpdateCarDto : CreateCarDto
 
 public class CarInfoCardDto
 {
+  public int CarId { get; set; }
   public string ModelName { get; set; }
   public decimal RentalPrice { get; set; }
   public string TypeName { get; set; }
@@ -39,9 +40,10 @@ public class CarInfoCardDto
   public bool IsAutomatic { get; set; }
   public int NoOfPassengers { get; set; }
 
-  public CarInfoCardDto(string modelName, int fuelCapacity, int noOfPassengers, bool isAutomatic,
+  public CarInfoCardDto(int carId, string modelName, int fuelCapacity, int noOfPassengers, bool isAutomatic,
     decimal rentalPrice, string typeName, bool isPreffered, string photoURL)
   {
+    CarId = carId;
     ModelName = modelName;
     FuelCapacity = fuelCapacity;
     NoOfPassengers = noOfPassengers;

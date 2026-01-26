@@ -26,9 +26,18 @@ public class GetCarAllEndpoint : Endpoint<GetCarAllRequest, ApiResponse<List<Car
   {
     var result = await _mediator.Send(new GetCarAllQuery(), ct);
 
-    Response.Data = result.Value;
-    Response.Success = result.IsSuccess;
-    Response.Message = result.IsSuccess? "Success" : "Failed";
+    if (result.IsSuccess)
+    {
+      Response.Data = result.Value;
+      Response.Success = result.IsSuccess;
+      Response.Message = result.IsSuccess? "Success" : "Failed";
+    }
+    else
+    {
+      Response.Success = false;
+      Response.Message = "Failed";
+      Response.Data = null;
+    }
 
     return Response;
   }

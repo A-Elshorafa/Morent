@@ -28,9 +28,17 @@ public sealed class LoginEndpoint : Endpoint<LoginRequest, ApiResponse<LoginResp
     var result = await _mediator.Send(new LoginCommand(req.Email, req.Password), ct);
 
     var res = ApiResponse<LoginResponseDto>.Ok(result);
-    Response.Data = res.Data;
-    Response.Message = res.Message;
-    Response.Success = res.Success;
+    if (res.Success)
+    {
+      Response.Data = res.Data;
+      Response.Message = res.Message;
+      Response.Success = res.Success;
+    }
+    else
+    {
+      Response.Success = false;
+      Response.Message = res.Message;
+    }
     
     await Send.OkAsync(Response, ct);
   }

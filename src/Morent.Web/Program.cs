@@ -35,6 +35,17 @@ builder.Services.AddProblemDetails(configure =>
     context.ProblemDetails.Extensions.TryAdd("requestId", context.HttpContext.TraceIdentifier);
   };
 });
+var allowedHeaders = builder.Configuration.GetSection("AllowedOrigins").Get<List<string>>();
+builder.Services.AddCors(options =>
+{
+  options.AddPolicy("AllowFrontend", policy =>
+  {
+    policy 
+      .WithOrigins(string.Join(",", allowedHeaders!))
+      .AllowAnyHeader()
+      .AllowAnyMethod();
+  });
+});
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGenWithAuth();
 builder.Services.AddFastEndpoints();
@@ -76,6 +87,22 @@ builder.Services.AddMediatR(cfg =>
   cfg.RegisterServicesFromAssembly(typeof(GetRecommendedCarsQuery).Assembly);
 });
 
+builder.Services.AddSwaggerGen(o =>
+{
+  o.TagActionsBy(api =>
+  {
+    var path = api.RelativePath;
+    if (string.IsNullOrWhiteSpace(path))
+      return new[] { "Default" };
+
+    // first segment after '/'
+    var firstSegment = path.Split('/')[0];
+    return new[] { firstSegment };
+  });
+
+  o.DocInclusionPredicate((_, __) => true);
+});
+
 // ✅ Register FastEndpoints and scan both Web + UseCases
 
 var app = builder.Build();
@@ -83,15 +110,18 @@ var app = builder.Build();
 await app.UseAppMiddlewareAndSeedDatabase();
 app.UseExceptionHandler();
 
+app.UseSwagger();
+app.UseSwaggerUI();
+app.MapSwagger()
+  .AllowAnonymous();
+
+app.UseCors("AllowFrontend");
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseFastEndpoints();
 
-app.UseSwagger();
-app.UseSwaggerUI();
-app.MapSwagger()
-  .AllowAnonymous();
+
 
 app.Run();
 

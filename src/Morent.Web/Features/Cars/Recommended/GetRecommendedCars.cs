@@ -25,11 +25,8 @@ public sealed class GetRecommendedCarsEndpoint
     {
       s.Summary = "List recommended cars";
       s.Description = "Returns recommended cars by reviews with pagination";
-      s.ExampleRequest = new GetRecommendedCarsRequest
-      {
-        PageIndex = 1,
-        PageSize = 10
-      };
+      s.Params["PageIndex"] = "Zero-based page index (default: 0)";
+      s.Params["PageSize"]  = "Number of items per page (default: 10)";
     });
   }
 

@@ -18,6 +18,7 @@ public class GetCarByIdHandler : MediatR.IRequestHandler<GetCarByIdQuery, Result
     if (entity == null) return Result.NotFound("Car not found");
 
     return Result.Success(new CarInfoCardDto(
+      entity.CarId,
       entity.ModelName,
       entity.FuelCapacity,
       entity.NoOfPassengers,

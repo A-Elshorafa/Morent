@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Morent.UseCases")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47e787fa6bf48fa159ddb53ffb83a61080aa6a7d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e69d1f1680f0725e92c9b063ca7f1521d58505a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Morent.UseCases")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Morent.UseCases")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

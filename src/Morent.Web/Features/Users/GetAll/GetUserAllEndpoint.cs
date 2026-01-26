@@ -25,12 +25,19 @@ public class GetUserAllEndpoint : EndpointWithoutRequest<ApiResponse<List<UserDt
   {
     var result = await _mediator.Send(new GetUserAllQuery(), ct);
 
-    throw new Exception("Ateast exception was thrown.");
-    /*Response.Success = result.IsSuccess;
-    Response.Message = "List fetched";
-    Response.Data = result.Value;
+    if (result.IsSuccess)
+    {
+      Response.Success = result.IsSuccess;
+      Response.Message = "List fetched";
+      Response.Data = result.Value;
+    }
+    else
+    {
+      Response.Success = false;
+      Response.Message = "List failed";
+      Response.Data = null;
+    }
 
     return Response;
-    */
   }
 }

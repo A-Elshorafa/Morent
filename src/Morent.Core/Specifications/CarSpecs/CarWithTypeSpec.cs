@@ -4,10 +4,15 @@ namespace Morent.Core.Specifications.CarSpecs;
 
 public class CarWithTypeSpec : Specification<Car>
 {
-  public CarWithTypeSpec(int carId)
+  public CarWithTypeSpec(int?  carId = null)
   {
-    Query
-      .Where(x => x.CarId == carId)
-      .Include(x => x.CarType);
+    if (carId.HasValue)
+    {
+      Query
+        .Where(x => x.CarId == carId)
+        .Include(x => x.CarType);
+    }
+    
+    Query.Include(x => x.CarType);
   }
 }
