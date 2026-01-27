@@ -17,7 +17,7 @@ public class CreateCarTransactionValidator : Validator<CreateCarTransactionReque
       .GreaterThan(0).WithMessage("Rental price must be greater than 0.");
 
     RuleFor(x => x.CardNumber)
-      .CreditCard().When(x => !string.IsNullOrWhiteSpace(x.CardNumber));
+      .NotEmpty().WithMessage("Card number is required.");
 
     RuleFor(x => x.CardHolderName)
       .MaximumLength(100);
