@@ -26,7 +26,7 @@ public class CreateCarTransactionEndpoint : Endpoint<CreateCarTransactionRequest
     var result = await _mediator.Send(new CreateCarTransactionCommand(req), ct);
 
     Response.Success = result.IsSuccess;
-    Response.Message = result.IsSuccess ? "Created successfully" : "Error creating";
+    Response.Message = result.IsSuccess ? "Created successfully" : result.Errors.First();
     Response.Data = result.Value;
 
     return Response;
