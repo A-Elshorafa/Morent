@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Morent.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e69d1f1680f0725e92c9b063ca7f1521d58505a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6eb9f9b33a58104d220d4e862ccfb92e992f1af6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Morent.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Morent.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

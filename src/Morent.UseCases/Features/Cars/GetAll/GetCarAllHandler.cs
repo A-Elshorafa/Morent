@@ -13,9 +13,9 @@ public class GetCarAllHandler : MediatR.IRequestHandler<GetCarAllQuery, Result<L
     _repo = repo;
   }
 
-  public async Task<Result<List<CarInfoCardDto>>> Handle(GetCarAllQuery request, CancellationToken ct)
+  public async Task<Result<List<CarInfoCardDto>>> Handle(GetCarAllQuery req, CancellationToken ct)
   {
-    var list = await _repo.ListAsync(new CarWithTypeSpec(), ct);
+    var list = await _repo.ListAsync(new CarsListSpec(req.pageNumber, req.pageSize, req.searchToken), ct);
 
     return Result.Success(
       list.Select(entity => new CarInfoCardDto(

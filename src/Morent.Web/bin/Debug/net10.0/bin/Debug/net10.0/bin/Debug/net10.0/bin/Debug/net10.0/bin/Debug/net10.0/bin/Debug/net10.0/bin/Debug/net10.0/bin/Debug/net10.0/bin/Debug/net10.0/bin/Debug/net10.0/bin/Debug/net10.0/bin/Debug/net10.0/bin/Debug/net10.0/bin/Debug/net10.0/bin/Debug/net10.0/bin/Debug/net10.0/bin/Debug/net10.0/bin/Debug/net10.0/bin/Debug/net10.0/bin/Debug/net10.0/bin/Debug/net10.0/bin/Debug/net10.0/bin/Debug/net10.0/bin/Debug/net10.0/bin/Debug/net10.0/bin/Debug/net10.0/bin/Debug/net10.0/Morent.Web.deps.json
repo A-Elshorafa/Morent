@@ -47,6 +47,7 @@
           "Mediator.SourceGenerator": "3.0.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.2",
           "Microsoft.EntityFrameworkCore.Design": "10.0.0",
+          "Microsoft.OpenApi": "2.3.0",
           "Morent.Infrastructure": "1.0.0",
           "Morent.UseCases": "1.0.0",
           "Scalar.AspNetCore": "2.10.3",
@@ -2223,7 +2224,6 @@
           "Ardalis.Result": "10.1.0",
           "BCrypt.Net-Next": "4.0.3",
           "MediatR": "14.0.0",
-          "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.2",
           "Morent.Core": "1.0.0"
         },
         "runtime": {

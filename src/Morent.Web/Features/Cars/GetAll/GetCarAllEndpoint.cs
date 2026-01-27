@@ -24,7 +24,11 @@ public class GetCarAllEndpoint : Endpoint<GetCarAllRequest, ApiResponse<List<Car
     GetCarAllRequest request,
     CancellationToken ct)
   {
-    var result = await _mediator.Send(new GetCarAllQuery(), ct);
+    var result = await _mediator.Send(new GetCarAllQuery(
+      pageSize: request.PageSize,
+      pageNumber: request.PageNumber,
+      searchToken: request.SearchToken
+    ), ct);
 
     if (result.IsSuccess)
     {
