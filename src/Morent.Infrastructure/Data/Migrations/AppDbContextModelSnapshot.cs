@@ -72,6 +72,9 @@ namespace Morent.Infrastructure.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("LocationId")
+                        .HasColumnType("int");
+
                     b.Property<string>("ModelName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -103,6 +106,8 @@ namespace Morent.Infrastructure.Data.Migrations
                     b.HasIndex("CarTypeId");
 
                     b.HasIndex("CompanyId");
+
+                    b.HasIndex("LocationId");
 
                     b.HasIndex("OwnerId");
 
@@ -467,6 +472,12 @@ namespace Morent.Infrastructure.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Morent.Core.Entities.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Morent.Core.Entities.User", "Owner")
                         .WithMany()
                         .HasForeignKey("OwnerId")
@@ -476,6 +487,8 @@ namespace Morent.Infrastructure.Data.Migrations
                     b.Navigation("CarType");
 
                     b.Navigation("Company");
+
+                    b.Navigation("Location");
 
                     b.Navigation("Owner");
                 });
@@ -502,7 +515,7 @@ namespace Morent.Infrastructure.Data.Migrations
             modelBuilder.Entity("Morent.Core.Entities.CarTransaction", b =>
                 {
                     b.HasOne("Morent.Core.Entities.Car", "Car")
-                        .WithMany()
+                        .WithMany("Transactions")
                         .HasForeignKey("CarId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -560,6 +573,8 @@ namespace Morent.Infrastructure.Data.Migrations
             modelBuilder.Entity("Morent.Core.Entities.Car", b =>
                 {
                     b.Navigation("Reviews");
+
+                    b.Navigation("Transactions");
                 });
 
             modelBuilder.Entity("Morent.Core.Entities.CarTransaction", b =>

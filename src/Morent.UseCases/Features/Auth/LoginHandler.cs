@@ -1,7 +1,7 @@
+using Morent.Core.DTOs;
 using Morent.Core.Entities;
 using Morent.Core.Interfaces.Services;
 using Morent.Core.Specifications.AuthSpecs;
-using Morent.UseCases.DTOs;
 
 namespace Morent.UseCases.Features.Auth;
 

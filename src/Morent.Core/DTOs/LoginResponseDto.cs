@@ -1,4 +1,4 @@
-namespace Morent.UseCases.DTOs;
+namespace Morent.Core.DTOs;
 
 public sealed class LoginResponseDto
 {

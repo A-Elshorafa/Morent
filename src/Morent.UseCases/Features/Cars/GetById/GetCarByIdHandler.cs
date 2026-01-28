@@ -1,4 +1,4 @@
-using Morent.UseCases.DTOs;
+using Morent.Core.DTOs;
 using Morent.Core.Entities;
 using Morent.Core.Specifications.CarSpecs;
 

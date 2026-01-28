@@ -28,6 +28,11 @@ public class Car : FullAuditedEntity, IAggregateRoot
     public virtual User Owner { get; set; } = null!;
     public int CompanyId { get; set; }
     public virtual CarCompany Company { get; set; } = null!;
+    public int LocationId { get; set; }
+    
+    public virtual Location Location { get; set; } = null!;
     
     public ICollection<CarReview> Reviews { get; private set; } = new List<CarReview>();
+    public ICollection<CarTransaction> Transactions { get; private set; }
+      = new List<CarTransaction>();
 }

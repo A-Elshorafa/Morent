@@ -1,6 +1,7 @@
-﻿using Morent.Core.Entities;
+﻿using Morent.Core.DTOs;
+using Morent.Core.Entities;
 
-namespace Morent.UseCases.DTOs;
+namespace Morent.Core.DTOs;
 
 public class CreateUserPreferenceDto
 {

@@ -1,4 +1,4 @@
-using Morent.UseCases.DTOs;
+using Morent.Core.DTOs;
 using Morent.Core.Entities;
 
 namespace Morent.UseCases.Features.CarTransactions.Update;

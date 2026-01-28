@@ -1,4 +1,4 @@
-﻿using Morent.UseCases.DTOs;
+﻿using Morent.Core.DTOs;
 using Morent.UseCases.Features.Cars.GetRecommendedCars;
 using Morent.Web.Common;
 using Morent.Web.Features.Car;

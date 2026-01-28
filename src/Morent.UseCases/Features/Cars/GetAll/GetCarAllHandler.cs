@@ -1,4 +1,4 @@
-using Morent.UseCases.DTOs;
+using Morent.Core.DTOs;
 using Morent.Core.Entities;
 using Morent.Core.Specifications.CarSpecs;
 
@@ -15,7 +15,9 @@ public class GetCarAllHandler : MediatR.IRequestHandler<GetCarAllQuery, Result<L
 
   public async Task<Result<List<CarInfoCardDto>>> Handle(GetCarAllQuery req, CancellationToken ct)
   {
-    var list = await _repo.ListAsync(new CarsListSpec(req.pageNumber, req.pageSize, req.searchToken), ct);
+    var listSpec = new CarsListSpec(req.carListDto);
+
+    var list = await _repo.ListAsync(listSpec, ct);
 
     return Result.Success(
       list.Select(entity => new CarInfoCardDto(
@@ -32,9 +34,9 @@ public class GetCarAllHandler : MediatR.IRequestHandler<GetCarAllQuery, Result<L
         {
           ModelName = entity.ModelName,
           TypeName = entity.CarType.TypeName,
-          IsPreferred = false,
+          IsPreferred = false
         })
-      .ToList()
-      );
+        .ToList()
+    );
   }
 }

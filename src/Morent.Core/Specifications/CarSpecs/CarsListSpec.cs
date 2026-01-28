@@ -1,16 +1,20 @@
-﻿using Morent.Core.Entities;
+﻿using System.Runtime.InteropServices.JavaScript;
+using Morent.Core.Entities;
+using Morent.Core.Specifications.Rules.Cars;
+using Morent.Core.DTOs;
 
 namespace Morent.Core.Specifications.CarSpecs;
 
 public class CarsListSpec: Specification<Car>
 {
-  public CarsListSpec(int pageNumber = 1, int pageSize = 10, string? searchKey = null)
+  public CarsListSpec(CarListDto req)
   {
-    if (!string.IsNullOrEmpty(searchKey))
+    Query.Include(s => s.CarType);
+
+    if (!string.IsNullOrEmpty(req.SearchToken))
     {
-      var searchToken = searchKey.ToLower();
+      var searchToken = req.SearchToken.ToLower();
       Query
-        .Include(s => s.CarType)
         .Include(s => s.Company)
         .Where(s =>
           s.ModelName.ToLower().Contains(searchToken) ||
@@ -18,10 +22,19 @@ public class CarsListSpec: Specification<Car>
           s.Company.CompanyName.ToLower().Contains(searchToken)
         );
     }
-    else
+    if (req.FromDate != null || req.ToDate != null)
     {
-      Query.Include(s => s.CarType);
+      Query.Include(c => c.Transactions)
+        .Where(CarAvailabilityRule.IsAvailable(
+          req.FromDate,
+          req.ToDate));
     }
-    Query.Take(pageSize).Skip((pageNumber - 1) * pageSize);
+
+    if (req.LocationId != null)
+    {
+      Query.Where(c => c.LocationId == req.LocationId);
+    }
+
+    Query.Take(req.PageSize).Skip((req.PageNumber - 1) * req.PageSize);
   }
 }

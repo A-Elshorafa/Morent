@@ -1,6 +1,6 @@
 ﻿using Morent.Core.Entities;
 
-namespace Morent.UseCases.DTOs;
+namespace Morent.Core.DTOs;
 
 public class CreateCarDto
 {

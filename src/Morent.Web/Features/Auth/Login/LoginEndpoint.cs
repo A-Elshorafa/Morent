@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Identity.Data;
-using Morent.UseCases.DTOs;
+using Morent.Core.DTOs;
 using Morent.UseCases.Features.Auth;
 using Morent.Web.Common;
 using Morent.Web.Features.CarCompanies;

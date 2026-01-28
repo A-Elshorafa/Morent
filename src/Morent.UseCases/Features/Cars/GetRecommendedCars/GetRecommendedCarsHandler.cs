@@ -1,6 +1,6 @@
 using Morent.Core.Entities;
 using Morent.Core.Specifications.CarSpecs;
-using Morent.UseCases.DTOs;
+using Morent.Core.DTOs;
 
 namespace Morent.UseCases.Features.Cars.GetRecommendedCars;
 

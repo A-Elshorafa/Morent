@@ -1,4 +1,4 @@
-using Morent.UseCases.DTOs;
+using Morent.Core.DTOs;
 
 namespace Morent.UseCases.Features.UserPreferences.GetById;
 

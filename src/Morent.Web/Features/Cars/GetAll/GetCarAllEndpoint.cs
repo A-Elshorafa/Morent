@@ -1,4 +1,4 @@
-using Morent.UseCases.DTOs;
+using Morent.Core.DTOs;
 using Morent.UseCases.Features.Cars.GetAll;
 using Morent.Web.Common;
 using IMediator = MediatR.IMediator;
@@ -25,9 +25,7 @@ public class GetCarAllEndpoint : Endpoint<GetCarAllRequest, ApiResponse<List<Car
     CancellationToken ct)
   {
     var result = await _mediator.Send(new GetCarAllQuery(
-      pageSize: request.PageSize,
-      pageNumber: request.PageNumber,
-      searchToken: request.SearchToken
+      request
     ), ct);
 
     if (result.IsSuccess)

@@ -1,4 +1,4 @@
-using Morent.UseCases.DTOs;
+using Morent.Core.DTOs;
 using Morent.UseCases.Features.CarReviews.GetAll;
 using Morent.Web.Common;
 using IMediator = MediatR.IMediator;
