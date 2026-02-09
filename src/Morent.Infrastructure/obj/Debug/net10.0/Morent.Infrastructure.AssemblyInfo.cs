@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Morent.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e03eeb4c0be30d52b363f9223710ea1e338a77b3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+deb2881320555629d9181411272f2e5d15e627b9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Morent.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Morent.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
